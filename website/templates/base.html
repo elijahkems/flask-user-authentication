@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'style.css')}}"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    {% block js_script%} {% endblock%}
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="/">Home</a>
+      </div>
+      <div>
+        <a href="login">Login</a>
+      </div>
+      <div>
+        <a href="sign-up">Sign-up</a>
+      </div>
+    </nav>
+    <div class="messages">
+      {% with messages = get_flashed_messages(with_categories=true)%} {% if
+      messages %} {% for category, message in messages%} {%if category ==
+      "error" %}
+      <div class="message-list message-error">
+        <p>{{message}}</p>
+        <div><button>&times;</button></div>
+      </div>
+      {% else%}
+      <div class="message-list message-success">
+        <p>{{message}}</p>
+        <div><button>&times;</button></div>
+      </div>
+      {%endif%} {% endfor%} {% endif%} {% endwith%}
+    </div>
+    <div>{% block content%} {% endblock%}</div>
+  </body>
+</html>

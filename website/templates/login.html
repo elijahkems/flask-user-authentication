@@ -1,0 +1,21 @@
+{% extends 'base.html'%} {% block title%} Login{% endblock%}
+<br />
+{% block js_script%} {% endblock%}
+<br />
+{% block content%}
+<form method="POST" class="container">
+  <h3 id="message"></h3>
+  <h3>User Authentication</h3>
+  <label for="name">Email</label>
+  <input type="text" id="email" name="email" placeholder="enter email" />
+  <!-- password -->
+  <label for="name">Password</label>
+  <input
+    type="text"
+    id="password"
+    placeholder="enter password"
+    name="password"
+  />
+  <input type="submit" id="submit" value="submit" />
+</form>
+{% endblock%}

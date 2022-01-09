@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #e98ed0,
+    #e38ed1,
+    #dc8dd2,
+    #d68dd3,
+    #cf8dd3
+  );
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0 -5px 10px 1px black;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav div {
+  padding: 1em 0.5em;
+  margin: 0 1em;
+}
+
+nav div a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+}
+
+nav div a:hover {
+  color: white;
+}
+
+nav div:hover {
+  background-color: #723f64;
+}
+
+nav div:hover a {
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.container h3 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 1.3em;
+}
+.container * {
+  display: block;
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+.container input {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+.container label {
+  float: left;
+}
+/* handling errors and pop ups */
+
+.message-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+}
+
+.message-error {
+  background-color: rgba(255, 0, 0, 0.459);
+}
+
+.message-success {
+  background-color: rgba(15, 247, 34, 0.5);
+}
+
+.messages button {
+  font-size: 2em;
+  margin: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 400px) {
+  nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav div {
+    margin: 0;
+    padding: 0.5em;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .container {
+    min-width: 400px;
+    width: 50vw;
+  }
+}
